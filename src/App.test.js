@@ -11,6 +11,6 @@ test('dumb test', () => {
   var result = patt.test(str);
 
   // Look for "W3Schools"
-  patt2 = /W3Schools/g;
-  result2 = patt2.test(str);
+  var patt2 = /W3Schools/g;
+  var result2 = patt2.test(str);
 });
