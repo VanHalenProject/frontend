@@ -21,7 +21,6 @@ export class Login extends Component {
 
     this.state = {
       userName: "",
-
       password: "",
       formErrors: {
         userName: "",
@@ -44,10 +43,7 @@ export class Login extends Component {
     e.preventDefault();
     const { name, value } = e.target;
     let formErrors = this.state.formErrors;
-    /*
-            console.log("Name: ", name);
-            console.log("Value: ", value);
-        */
+
     switch (name) {
       /*If input.length > 0, the input will be validated. If the input is invalid,
             an errormessage will be printed out to the screen. If the input is valid no 
