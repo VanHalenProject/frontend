@@ -1,4 +1,5 @@
 import React from 'react';
+import Selectors from "./Components/Selector/selectors";
 
 import './Drawer.css';
 
@@ -14,6 +15,8 @@ const drawer = props => {
             <ul>
                 <li><a href="/"> History</a></li>
                 <li><a href="/"> Profile</a></li>
+                <li><a href="/"> Profile</a></li>
+
             </ul>
         </nav>
     );
