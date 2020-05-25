@@ -1,9 +1,10 @@
-import React from "react";
-import "./App.css";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "./css/App2.css";
+
 import Home from "./components/Home";
-import Contact from "./components/Contact";
-import LoginFormComponent from "./components/LoginFormComponent";
+import CreateAccount from "./components/CreateAccount";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -16,7 +17,14 @@ function App() {
             </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link className="link" to="/login">
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link className="link" to="/createAccount">
+              Create account
+            </Link>
           </li>
         </ul>
 
@@ -25,9 +33,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/contact">
-            <Contact />
-            <LoginFormComponent />
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/createAccount">
+            <CreateAccount />
           </Route>
         </Switch>
       </div>
