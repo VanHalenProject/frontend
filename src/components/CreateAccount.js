@@ -5,12 +5,10 @@ const emailRegex = RegExp(
 );
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
-
   //Validate form errors being empty
   Object.values(formErrors).forEach((val) => {
     val.length > 0 && (valid = false);
   });
-
   //Validate if form is filled out.
   Object.values(rest).forEach((val) => {
     val == null && (valid = false);
@@ -36,7 +34,6 @@ export class CreateAccount extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     if (formValid(this.state)) {
       console.log();
     } else {
@@ -48,20 +45,11 @@ export class CreateAccount extends Component {
     e.preventDefault();
     const { name, value } = e.target;
     let formErrors = this.state.formErrors;
-    /*
-        console.log("Name: ", name);
-        console.log("Value: ", value);
-    */
+
     switch (name) {
-      /*If input.length > 0, the input will be validated. If the input is invalid,
-        an errormessage will be printed out to the screen. If the input is valid no 
-        message should be shown and the input should set the value.*/
       case "userName":
         formErrors.userName = value.length < 3 ? "Minimum of 3 characters" : "";
         break;
-      /*If input.length > 0, the input will be validated. If the input is invalid,
-        an errormessage will be printed out to the screen. If the input is valid no 
-        message should be shown and the input should set the value.*/
       case "email":
         formErrors.email =
           emailRegex.test(value) && value.length > 0
@@ -103,10 +91,6 @@ export class CreateAccount extends Component {
               <label htmlFor="userName">Username</label>
               <input
                 type="text"
-                /*the input is being checked when the input.length > 0. 
-                If the input is invalid, the classname changes to "error" 
-                and input field should turn red, if the input is valid, 
-                nothing should happen.*/
                 className={formErrors.userName.length > 0 ? "error" : null}
                 placeholder="Username"
                 name="userName"
@@ -122,10 +106,6 @@ export class CreateAccount extends Component {
               <label htmlFor="email">Email</label>
               <input
                 type="email"
-                /*the input is being checked when the input.length > 0. 
-                If the input is invalid, the classname changes to "error" 
-                and input field should turn red, if the input is valid, 
-                nothing should happen.*/
                 className={formErrors.email.length > 0 ? "error" : null}
                 placeholder="Email"
                 name="email"
@@ -141,10 +121,6 @@ export class CreateAccount extends Component {
               <label htmlFor="password">Password</label>
               <input
                 type="password"
-                /*the input is being checked when the input.length > 0. 
-                If the input is invalid, the classname changes to "error" 
-                and input field should turn red, if the input is valid, 
-                nothing should happen.*/
                 className={formErrors.password.length > 0 ? "error" : null}
                 placeholder="Password"
                 name="password"
@@ -160,7 +136,6 @@ export class CreateAccount extends Component {
               <button type="submit" onClick={this.submitAccount}>
                 Create account
               </button>
-              {/* <small>Already have an account?</small> */}
             </div>
           </form>
         </div>
