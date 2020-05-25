@@ -1,21 +1,19 @@
-import React from 'react';
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Home from './components/Home'
-import Contact from './components/Contact'
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import LoginFormComponent from "./components/LoginFormComponent";
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="App">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link className="link" to="/">
+              Home
+            </Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
@@ -29,6 +27,7 @@ function App() {
           </Route>
           <Route exact path="/contact">
             <Contact />
+            <LoginFormComponent />
           </Route>
         </Switch>
       </div>
