@@ -25,7 +25,6 @@ export class Login extends Component {
       password: "",
       formErrors: {
         userName: "",
-
         password: "",
       },
     };
@@ -68,6 +67,18 @@ export class Login extends Component {
     }
 
     this.setState({ formErrors, [name]: value }, () => console.log(this.state));
+  };
+
+  submitLogin = function () {
+    fetch("https://vh-backend.herokuapp.com/api/user/auth", {
+      method: "POST",
+      body: JSON.stringify({
+        userName: this.state.userName,
+        password: this.state.password,
+      }),
+    }).then((res) => {
+      console.log("Request complete! response:", res);
+    });
   };
 
   render() {
@@ -117,7 +128,9 @@ export class Login extends Component {
               )}
             </div>
             <div className="submitStyle">
-              <button type="submit">Login</button>
+              <button type="submit" onClick={this.submitLogin}>
+                Login
+              </button>
               {/* <small>Already have an account?</small> */}
             </div>
           </form>
