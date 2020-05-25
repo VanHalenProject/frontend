@@ -31,7 +31,6 @@ export class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     if (formValid(this.state)) {
       console.log();
     } else {
@@ -45,16 +44,9 @@ export class Login extends Component {
     let formErrors = this.state.formErrors;
 
     switch (name) {
-      /*If input.length > 0, the input will be validated. If the input is invalid,
-            an errormessage will be printed out to the screen. If the input is valid no 
-            message should be shown and the input should set the value.*/
       case "userName":
         formErrors.userName = value.length < 3 ? "Minimum of 3 characters" : "";
         break;
-      /*If input.length > 0, the input will be validated. If the input is invalid,
-            an errormessage will be printed out to the screen. If the input is valid no 
-            message should be shown and the input should set the value.*/
-
       case "password":
         formErrors.password = value.length < 6 ? "Minimum of 6 characters" : "";
         break;
@@ -79,7 +71,6 @@ export class Login extends Component {
 
   render() {
     const { formErrors } = this.state;
-
     return (
       <div className="App">
         <div className="pageHeader">Login</div>
@@ -89,10 +80,6 @@ export class Login extends Component {
               <label htmlFor="userName">Username</label>
               <input
                 type="text"
-                /*the input is being checked when the input.length > 0. 
-                    If the input is invalid, the classname changes to "error" 
-                    and input field should turn red, if the input is valid, 
-                    nothing should happen.*/
                 className={formErrors.userName.length > 0 ? "error" : null}
                 placeholder="Username"
                 name="userName"
@@ -108,10 +95,6 @@ export class Login extends Component {
               <label htmlFor="password">Password</label>
               <input
                 type="password"
-                /*the input is being checked when the input.length > 0. 
-                    If the input is invalid, the classname changes to "error" 
-                    and input field should turn red, if the input is valid, 
-                    nothing should happen.*/
                 className={formErrors.password.length > 0 ? "error" : null}
                 placeholder="Password"
                 name="password"
@@ -127,7 +110,7 @@ export class Login extends Component {
               <button type="submit" onClick={this.submitLogin}>
                 Login
               </button>
-              {/* <small>Already have an account?</small> */}
+              {/* <small>Already have an account?</small>  */}
             </div>
           </form>
         </div>
