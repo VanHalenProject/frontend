@@ -78,6 +78,19 @@ export class CreateAccount extends Component {
     this.setState({ formErrors, [name]: value }, () => console.log(this.state));
   };
 
+  submitAccount = function () {
+    fetch("https://vh-backend.herokuapp.com/api/user/auth", {
+      method: "POST",
+      body: JSON.stringify({
+        userName: this.state.userName,
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    }).then((res) => {
+      console.log("Request complete! response:", res);
+    });
+  };
+
   render() {
     const { formErrors } = this.state;
 
@@ -85,7 +98,7 @@ export class CreateAccount extends Component {
       <div className="App">
         <div className="pageHeader">Create account</div>
         <div className="form-wrapper">
-          <form action="" method="post" onSubmit={this.handleSubmit} noValidate>
+          <form onSubmit={this.handleSubmit} noValidate>
             <div className="userName">
               <label htmlFor="userName">Username</label>
               <input
@@ -144,7 +157,9 @@ export class CreateAccount extends Component {
               )}
             </div>
             <div className="submitStyle">
-              <button type="submit">Create account</button>
+              <button type="submit" onClick={this.submitAccount}>
+                Create account
+              </button>
               {/* <small>Already have an account?</small> */}
             </div>
           </form>
@@ -153,5 +168,4 @@ export class CreateAccount extends Component {
     );
   }
 }
-
 export default CreateAccount;
