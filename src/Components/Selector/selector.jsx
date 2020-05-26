@@ -9,7 +9,9 @@ export default class Selector extends Component {
 	};
 
 	handleDecrement = () => {
-		this.setState({ value: this.state.value - 1 });
+		if (this.state.value === 0) {
+			this.setState({ value: this.state.value - 1 });
+		}
 	};
 
 	render() {
