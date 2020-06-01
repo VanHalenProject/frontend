@@ -110,7 +110,6 @@ export class Login extends Component {
               <button type="submit" onClick={this.submitLogin}>
                 Login
               </button>
-              {/* <small>Already have an account?</small>  */}
             </div>
           </form>
         </div>
