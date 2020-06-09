@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Selector from "./selector";
-import axios from "axios";
+//import axios from "axios";
 
 export default class Selectors extends Component {
 	state = {
@@ -13,48 +13,48 @@ export default class Selectors extends Component {
 		],
 	};
 
-	getSkittleAvailibility = () => {
-		axios
-			.get(
-				"https://0918fe64-9b80-413e-b721-6f8d296f9ff3.mock.pstmn.io?Green=12&Red=15&Yellow=10&Purple=2&Orange=8"
-			)
-			.then((result) => {
-				this.setState({
-					skittleSelectors: [
-						{
-							id: 1,
-							value: 0,
-							color: "Green",
-							availability: result.data.Green,
-						},
-						{
-							id: 2,
-							value: 0,
-							color: "Red",
-							availability: result.data.Red,
-						},
-						{
-							id: 3,
-							value: 0,
-							color: "Yellow",
-							availability: result.data.Yellow,
-						},
-						{
-							id: 4,
-							value: 0,
-							color: "Purple",
-							availability: result.data.Purple,
-						},
-						{
-							id: 5,
-							value: 0,
-							color: "Orange",
-							availability: result.data.Orange,
-						},
-					],
-				});
-			});
-	};
+	// getSkittleAvailibility = () => {
+	// 	axios
+	// 		.get(
+	// 			"https://0918fe64-9b80-413e-b721-6f8d296f9ff3.mock.pstmn.io?Green=12&Red=15&Yellow=10&Purple=2&Orange=8"
+	// 		)
+	// 		.then((result) => {
+	// 			this.setState({
+	// 				skittleSelectors: [
+	// 					{
+	// 						id: 1,
+	// 						value: 0,
+	// 						color: "Green",
+	// 						availability: result.data.Green,
+	// 					},
+	// 					{
+	// 						id: 2,
+	// 						value: 0,
+	// 						color: "Red",
+	// 						availability: result.data.Red,
+	// 					},
+	// 					{
+	// 						id: 3,
+	// 						value: 0,
+	// 						color: "Yellow",
+	// 						availability: result.data.Yellow,
+	// 					},
+	// 					{
+	// 						id: 4,
+	// 						value: 0,
+	// 						color: "Purple",
+	// 						availability: result.data.Purple,
+	// 					},
+	// 					{
+	// 						id: 5,
+	// 						value: 0,
+	// 						color: "Orange",
+	// 						availability: result.data.Orange,
+	// 					},
+	// 				],
+	// 			});
+	// 		});
+	// };
 
 	handleReset = () => {
 		const selectors = this.state.skittleSelectors.map((c) => {
