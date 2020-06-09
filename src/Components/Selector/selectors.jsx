@@ -56,14 +56,14 @@ export default class Selectors extends Component {
 	// 		});
 	// };
 
-	handleReset = () => {
-		const selectors = this.state.skittleSelectors.map((c) => {
-			console.log(c.value);
-			c.value = 0;
+	// handleReset = () => {
+	// 	const selectors = this.state.skittleSelectors.map((c) => {
+	// 		console.log(c.value);
+	// 		c.value = 0;
 	
-		});
-		this.setState({ selectors });
-	};
+	// 	});
+	// 	this.setState({ selectors });
+	// };
 
 	render() {
 		return (
