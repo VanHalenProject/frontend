@@ -13,8 +13,8 @@ const toolbar = props => (
             <div className="spacer" />
             <div className="sidebar_navigation-items">
                 <ul>
-                    <li><a href="/">History </a></li>
-                    <li><a href="/">Profile </a></li>
+                    {/* <li><a href="/">History </a></li>
+                    <li><a href="/">Profile </a></li> */}
                 </ul>
             </div>
         </nav>
