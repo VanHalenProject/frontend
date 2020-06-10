@@ -23,9 +23,6 @@ const drawer = (props) => {
 					</ul>
 				</div>
 			</nav>
-
-
-
 			<hr />
 			<div>
 				<switch>
