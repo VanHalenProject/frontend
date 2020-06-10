@@ -5,69 +5,48 @@ export default class Selector extends Component {
 	};
 
 	handleIncrement = () => {
-		this.setState({ value: this.state.value + 1 });
+		this.setState(
+			(prevState) => {
+				return { value: prevState.value + 1 };
+			},
+			() => this.props.onIncrement(this.props.selector)
+		);
 	};
 
 	handleDecrement = () => {
-		if (this.state.value === 0) {
-			this.setState({ value: this.state.value - 1 });
-		}
+		this.setState(
+			(prevState) => {
+				return { value: prevState.value - 1 };
+			},
+			() => this.props.onDecrement(this.props.selector)
+		);
+	};
+
+	handleReset = () => {
+		this.setState(
+			(prevState) => {
+				return { value: 0 };
+			},
+			() => this.props.onReset(this.props.selector)
+		);
 	};
 
 	render() {
 		return (
 			<div>
 				{this.props.children}
-				<span className={this.getBadge()}>{this.state.value}</span>
-				<button
-					onClick={this.handleIncrement}
-					className="btn btn-secondary btn-sm m-2"
-				>
+				<span className="amount">{this.state.value}</span>
+
+				<button className="btnSkittleSelector" onClick={this.handleIncrement}>
 					+
 				</button>
-				<button
-					onClick={this.handleDecrement}
-					className="btn btn-secondary btn-sm m-2"
-				>
+				<button className="btnSkittleSelector" onClick={this.handleDecrement}>
 					-
 				</button>
-				<button
-					onClick={() =>
-						this.setState({
-							value: 0,
-						})
-					}
-					className="btn btn-danger btn-sm m-2"
-				>
+				<button className="btnSkittleSelector" onClick={this.handleReset}>
 					Reset
 				</button>
 			</div>
 		);
 	}
-
-	getBadge() {
-		let classes = "badge m-2 badge-";
-		classes += this.state.value === 0 ? "warning" : "primary";
-		return classes;
-	}
 }
-
-// changeRed =() => {
-// 	const redSelector = this.state.skittleSelectors.findIndex(element => element.color === "Red");
-// 	let changeRed = [...this.state.skittleSelectors];
-// 	axios.get(
-// 		"https://0918fe64-9b80-413e-b721-6f8d296f9ff3.mock.pstmn.io?Green=12&Red=15&Yellow=10&Purple=2&Orange=8"
-// 	).then((result) => {
-// 		changeRed[redSelector] = {...changeRed[redSelector], availability: result.data.Red}
-// 	})
-// 	.then(() => {
-// 		this.setState({
-// 			skittleSelectors: changeRed
-// 		});
-// });
-
-// function changeColor(){
-// 	changeGreen();
-// 	changeRed();
-
-// };
