@@ -2,6 +2,8 @@ import React from "react";
 import "./Drawer.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Selectors from "../Selector/selectors";
+import Login from "../Login/Login.js";
+import CreateAccount from "../CreateAccount/CreateAccount.js";
 
 const drawer = (props) => {
 	let drawerClasses = "drawer";
@@ -31,7 +33,7 @@ const drawer = (props) => {
 				</switch>
 			</div>
 		</Router>
-	);
+	); 
 };
 
 export default drawer;
