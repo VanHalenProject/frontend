@@ -12,44 +12,47 @@ export default class Selectors extends Component {
 		],
 	};
 
-	async componentDidMount(){
-		const url = "https://0918fe64-9b80-413e-b721-6f8d296f9ff3.mock.pstmn.io?Green&Red&Yellow&Purple&Orange";
+	async componentDidMount() {
+		const url =
+			"https://0918fe64-9b80-413e-b721-6f8d296f9ff3.mock.pstmn.io?Green&Red&Yellow&Purple&Orange";
 		const response = await fetch(url);
 		const data = await response.json();
+		console.log(data);
+		
 		this.setState({
-				skittleSelectors: [
-					{
-						id: 1,
-						value: 0,
-						color: "Green",
-						availability: data.Green,
-					},
-					{
-						id: 2,
-						value: 0,
-						color: "Red",
-						availability: data.Red,
-					},
-					{
-						id: 3,
-						value: 0,
-						color: "Yellow",
-						availability: data.Yellow,
-					},
-					{
-						id: 4,
-						value: 0,
-						color: "Purple",
-						availability: data.Purple,
-					},
-					{
-						id: 5,
-						value: 0,
-						color: "Orange",
-						availability: data.Orange,
-					},
-				],
-			});
+			skittleSelectors: [
+				{
+					id: 1,
+					value: 0,
+					color: "Green",
+					availability: data.Green,
+				},
+				{
+					id: 2,
+					value: 0,
+					color: "Red",
+					availability: data.Red,
+				},
+				{
+					id: 3,
+					value: 0,
+					color: "Yellow",
+					availability: data.Yellow,
+				},
+				{
+					id: 4,
+					value: 0,
+					color: "Purple",
+					availability: data.Purple,
+				},
+				{
+					id: 5,
+					value: 0,
+					color: "Orange",
+					availability: data.Orange,
+				},
+			],
+		});
 	}
 
 	handleIncrement = (selector) => {
@@ -139,12 +142,14 @@ export default class Selectors extends Component {
 					>
 						<p class="txtSkittleSelectorColor">{selector.color}:</p>
 						<p class="txtSkittleSelector">
-							amount availible: {selector.availability}
+							Amount available: {selector.availability}
 						</p>
 					</Selector>
 				))}
 				<div>
-					<button className="btnSend" onClick={this.postData}>Send</button>
+					<button className="btnSend" onClick={this.postData}>
+						Send
+					</button>
 				</div>
 			</div>
 		);

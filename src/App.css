@@ -2,6 +2,10 @@
 	text-align: center;
 }
 
+.amount {
+  margin-right: 15px;
+}
+
 .App-logo {
 	height: 40vmin;
 	pointer-events: none;
@@ -12,6 +16,9 @@
 }
 
 .btnSkittleSelector {
+  background-color:#521751;
+  color: white;
+  border-color: #521751;
 	margin: 5px;
 }
 
@@ -26,8 +33,10 @@
 }
 
 .btnSend{
+  background-color:#521751;
+  color: white;
   margin-top: 20px;
-  margin-left: 120px
+  margin-left: 100px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

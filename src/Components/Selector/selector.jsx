@@ -35,7 +35,7 @@ export default class Selector extends Component {
 		return (
 			<div>
 				{this.props.children}
-				<span className="badge m-2 badge-warning">{this.state.value}</span>
+				<span className="amount">{this.state.value}</span>
 
 				<button className="btnSkittleSelector" onClick={this.handleIncrement}>
 					+
