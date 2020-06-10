@@ -14,11 +14,12 @@ export default class Selectors extends Component {
 
 	async componentDidMount() {
 		const url =
-			"https://0918fe64-9b80-413e-b721-6f8d296f9ff3.mock.pstmn.io?Green&Red&Yellow&Purple&Orange";
+			"https://0918fe64-9b80-413e-b721-6f8d296f9ff3.mock.pstmn.io?green=12&red=15&yellow=10&purple=2&orange=8";
+			//https://vh-backend.herokuapp.com/api/skittles/sort
 		const response = await fetch(url);
 		const data = await response.json();
 		console.log(data);
-		
+
 		this.setState({
 			skittleSelectors: [
 				{
@@ -108,23 +109,25 @@ export default class Selectors extends Component {
 		let orangeValue = this.state.skittleSelectors[orangeSelector].value;
 
 		let sendData = JSON.stringify({
-			Green: greenValue,
-			Red: redValue,
-			Yellow: yellowValue,
-			Purple: purpleValue,
-			Orange: orangeValue,
+			green: greenValue,
+			red: redValue,
+			yellow: yellowValue,
+			purple: purpleValue,
+			orange: orangeValue,
 		});
 
 		const requestOptions = {
 			method: "POST",
-			headers: { "Content-Type": "application/json" },
+			//headers: { "Content-Type": "application/json" },
 			body: sendData,
 		};
+
 		fetch(
-			"https://0918fe64-9b80-413e-b721-6f8d296f9ff3.mock.pstmn.io?Green&Red&Yellow&Purple&Orange",
+			"https://vh-backend.herokuapp.com/api/skittles/sort",
 			requestOptions
 		).then((response) => response.json());
 		console.log(sendData);
+		//window.location.reload(false);
 	};
 
 	render() {

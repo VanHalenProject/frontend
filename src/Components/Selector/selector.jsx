@@ -43,7 +43,6 @@ export default class Selector extends Component {
 				<button className="btnSkittleSelector" onClick={this.handleDecrement}>
 					-
 				</button>
-
 				<button className="btnSkittleSelector" onClick={this.handleReset}>
 					Reset
 				</button>
