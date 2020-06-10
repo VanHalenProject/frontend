@@ -11,29 +11,46 @@ const drawer = (props) => {
 		drawerClasses = "drawer open";
 	}
 
-	return (
-		<Router>
-			<nav className={drawerClasses}>
-				<div>
-					<ul>
-						<li>
-							<Link className="link" to="/selectors">
-								SkittleSelector
-							</Link>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<hr />
-			<div>
-				<switch>
-					<Route exact path="/selectors">
-						<Selectors />
-					</Route>
-				</switch>
-			</div>
-		</Router>
-	); 
+return (
+    <Router>
+      <nav className={drawerClasses}>
+        <div>
+          <ul>
+            <li>
+              <Link className="link" to="/selectors">
+                SkittleSelector
+              </Link>
+            </li>
+            <li>
+              <Link className="link" to="/login">
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link className="link" to="/createAccount">
+                Create account
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <hr />
+      <div>
+        <switch>
+          <Route exact path="/selectors">
+            <Selectors />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/createAccount">
+            <CreateAccount />
+          </Route>
+        </switch>
+      </div>
+    </Router>
+  );
 };
 
 export default drawer;
