@@ -108,16 +108,16 @@ input.error {
   display: relative;
 }
 
-.userName {
+.username {
   margin-right: 1%;
 }
 
-.lastName {
+.lastname {
   margin-left: 1%;
 }
 
-.userName,
-.lastName,
+.username,
+.lastname,
 .email,
 .password {
   display: flex;
@@ -125,8 +125,8 @@ input.error {
   margin-bottom: 15px;
 }
 
-.userName,
-.lastName {
+.username,
+.lastname {
   width: 100%;
 }
 
