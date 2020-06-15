@@ -1,6 +1,6 @@
 import React from "react";
 import "./Drawer.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Selectors from "../Selector/selectors";
 import Login from "../Login/Login.js";
 import CreateAccount from "../CreateAccount/CreateAccount.js";
@@ -37,7 +37,7 @@ return (
 
       <hr />
       <div>
-        <switch>
+        <Switch>
           <Route exact path="/selectors">
             <Selectors />
           </Route>
@@ -47,7 +47,7 @@ return (
           <Route exact path="/createAccount">
             <CreateAccount />
           </Route>
-        </switch>
+        </Switch>
       </div>
     </Router>
   );
