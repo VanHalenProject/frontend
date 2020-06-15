@@ -37,7 +37,7 @@ return (
 
       <hr />
       <div>
-        <switch>
+        <Switch>
           <Route exact path="/selectors">
             <Selectors />
           </Route>
@@ -47,7 +47,7 @@ return (
           <Route exact path="/createAccount">
             <CreateAccount />
           </Route>
-        </switch>
+        </Switch>
       </div>
     </Router>
   );
