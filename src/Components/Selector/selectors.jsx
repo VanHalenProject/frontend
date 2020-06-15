@@ -14,8 +14,8 @@ export default class Selectors extends Component {
 
 	async componentDidMount() {
 		const url =
-			"https://0918fe64-9b80-413e-b721-6f8d296f9ff3.mock.pstmn.io?green=12&red=15&yellow=10&purple=2&orange=8";
-			//https://vh-backend.herokuapp.com/api/skittles/sort
+			 "https://0918fe64-9b80-413e-b721-6f8d296f9ff3.mock.pstmn.io?green=12&red=15&yellow=10&purple=2&orange=8";
+			//"https://vh-backend.herokuapp.com/api/skittles/get";
 		const response = await fetch(url);
 		const data = await response.json();
 		console.log(data);
@@ -116,18 +116,11 @@ export default class Selectors extends Component {
 			orange: orangeValue,
 		});
 
-		const requestOptions = {
-			method: "POST",
-			//headers: { "Content-Type": "application/json" },
-			body: sendData,
-		};
-
 		fetch(
-			"https://vh-backend.herokuapp.com/api/skittles/sort",
-			requestOptions
-		).then((response) => response.json());
+			"https://vh-backend.herokuapp.com/api/skittles/sort"
+			
+		).then((response) => response.json()); //console.log(response);
 		console.log(sendData);
-		//window.location.reload(false);
 	};
 
 	render() {
@@ -143,8 +136,8 @@ export default class Selectors extends Component {
 						onReset={this.handleReset}
 						onChangedValue={this.onChangedValue}
 					>
-						<p class="txtSkittleSelectorColor">{selector.color}:</p>
-						<p class="txtSkittleSelector">
+						<p className="txtSkittleSelectorColor">{selector.color}:</p>
+						<p className="txtSkittleSelector">
 							Amount available: {selector.availability}
 						</p>
 					</Selector>

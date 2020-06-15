@@ -1,6 +1,6 @@
 import React from "react";
 import "./Drawer.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Selectors from "../Selector/selectors";
 
 const drawer = (props) => {
@@ -24,11 +24,11 @@ const drawer = (props) => {
 			</nav>
 			<hr />
 			<div>
-				<switch>
+				<Switch>
 					<Route exact path="/selectors">
 						<Selectors />
 					</Route>
-				</switch>
+				</Switch>
 			</div>
 		</Router>
 	);
